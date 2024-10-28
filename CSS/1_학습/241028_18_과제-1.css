@@ -1,0 +1,14 @@
+/* h1 태그에 마우스가 올라가면 글자가 "red"로 변화 */
+h1:hover {
+    color: red;
+}
+
+/* a 태그를 클릭하고 있으면 배경이 파랑색으로 변화 */
+a:active {
+    background-color: blue;
+}
+
+/* input 태그에 포커스가 가면 입력창 배경이 "orange"로 변화 */
+input:focus {
+    background-color: orange;
+}

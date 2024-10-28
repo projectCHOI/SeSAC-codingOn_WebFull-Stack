@@ -1,0 +1,29 @@
+.container {
+    width: auto;
+    height: 200px;
+    background-color: orange;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    gap: 30px;
+    padding: 10px;
+  }
+  .box {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  .html-box {
+    background-color: #87CEEB;
+  }
+  .css-box {
+    background-color: green;
+  }
+  .js-box {
+    background-color: red;
+  }
