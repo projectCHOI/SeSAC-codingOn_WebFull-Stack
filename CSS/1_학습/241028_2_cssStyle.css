@@ -1,1 +1,12 @@
-/* ㄴ */
+/* 외부에서 가져오기 */
+@import url(./241028_1_css내부\ 적용.html);
+
+p {
+  background-color: red;
+  color: white;
+}
+
+h3 {
+  background-color: white;
+  color: black;
+}
