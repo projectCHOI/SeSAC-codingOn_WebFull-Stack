@@ -1,1 +1,61 @@
 <!-- 선택자 종합실습 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 종합실습</title>
+    <style>
+        .container{
+            width: 380px;
+        }
+        h2:hover{
+            background-color: black;
+            color: white;
+        }
+        textarea:focus{
+            background-color: rgba(240, 130, 130, 0.377);
+        }
+        button{
+            background-color: rgba(255, 0, 0, 0.596);
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            float: right;
+        }
+        input[id='red']:checked+label{
+            display: inline-block;
+            background-color: red;
+            color: white;
+        }
+        input[id='blue']:checked+label{
+            display: inline-block;
+            background-color: blue;
+            color: white;
+        }
+        input[id='yellow']:checked+label{
+            display: inline-block;
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>건의 사항을 적어주세요!</h2>
+        <form>
+            <textarea cols="50" rows="10" name="textarea" id="textarea" placeholder="건의 사항 🎈"></textarea>
+            <div>
+                <input type="checkbox" name="color" id="red" />
+                <label for="red">빨강</label>
+                <input type="checkbox" name="color" id="blue" />
+                <label for="blue">파랑</label>
+                <input type="checkbox" name="color" id="yellow" />
+                <label for="yellow">노랑</label>  
+            </div>
+            <button>제출</button>
+        </form>
+    </div>
+</body>
+</html>
