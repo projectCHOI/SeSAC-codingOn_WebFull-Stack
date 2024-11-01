@@ -1,0 +1,39 @@
+/* CSS */
+/* 공통 스타일 */
+.color-border{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, yellow, 40%, rgb(255, 0, 144) );
+    /* 가운데 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.white-border{
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;
+    /* 가운데 정렬 */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 이미지 배경 설정 */
+.image {
+    width: 260px;
+    height: 260px;
+    background-image: url("./241030_29_과제-background-1.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    /* 가운데 정렬 */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
