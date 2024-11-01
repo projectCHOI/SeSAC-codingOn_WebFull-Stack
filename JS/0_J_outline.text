@@ -1,2 +1,18 @@
 # JS란?
-- 웹페이지 구조화 프로그램
+-이전에 배운 html, css가 집의 외관을 구성하는 일이라면, JS는 웹페이지 내부 인테리어 프로그램
+
+# 위치
+-내장 방식(기본)
+<script>
+    alert("헤드 그런데 js 파일 링크 위");
+</script>
+
+-링크방식
+Java Script 파일을 따로 만들어서 링크하는 방식 like CSS
+<script src="./index.js"></script>
+
+-하지만 어디에나 사용가능
+• Head 태그 내부
+• Body 태그 내부
+• Head 와 body 사이
+• Body 아래 등
