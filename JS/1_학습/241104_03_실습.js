@@ -13,7 +13,7 @@ let nullType = typeof null;  // "object" due to null
 console.log(`typeof를 array나 null에 사용하면 "${arrayType}" 결과를 얻을 수 있습니다.`);
 
 
-// 엥
+// 엥?
 let number = 10
 let string = "안녕"
 let array = [1, 2, 3]
