@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>요소선택</title>
+    <script src="./241106_11_요소선택.js" defer></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .pink{
+            background-color: pink;
+        }
+
+        #green{
+            background-color: green;
+        }
+
+        #red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="pink">1</div>
+    <div class="pink">2</div>
+    <div class="pink">3</div>
+    <div class="pink">4</div>
+    <div id="green" class="others"></div>
+    <div id="red" class="others"></div>
+</body>
+</html>
