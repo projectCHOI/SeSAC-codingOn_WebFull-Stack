@@ -62,4 +62,101 @@ function sayHi(){
     alert('안녕하세요!! 버튼5입니다!!')
 }
 
-// [-------------------]
+// =====================================
+const btn = document.querySelector('button')
+const input = document.querySelector('input')
+
+/* 1. [클릭 이벤트] */
+btn.addEventListener('click',function(event){
+    // 클릭 이벤트에 관한 정보 (event 객체)
+    console.log(event)
+
+    // 어떤 요소가 클릭되었는지 확인 가능
+    console.log(event.target)
+})
+
+// ======================================
+/* 2. [키보드 이벤트] */
+input.addEventListener('keydown',function(event){
+    // console.log(event)
+
+    // 방향키 아래, 위, 왼쪽, 오른쪽
+    // console.log(event.code)
+    // console.log(event.key)
+    // console.log(event.keyCode)
+    if(event.code==="ArrowLeft"){
+        console.log('왼쪽 방향키 눌렸습니다.')
+    }else if(event.code==="ArrowRight"){
+        console.log('오른쪽 방향키 눌렸습니다.')
+    }else if(event.code ==="ArrowUp"){
+        console.log('위쪽 방향키 눌렸습니다.')
+    }else if(event.code==="ArrowDown"){
+        console.log('아래쪽 방향키 눌렸습니다.')
+    }else{
+        console.log('방향키가 아닌 키보드 누르는 중...')
+    }
+})
+
+// =============================================
+/* 3. [scroll 이벤트] */
+// console.log(window)
+
+window.addEventListener('scroll',(event)=>{
+    // console.log(event)
+    // console.log(event.target)
+    // console.log(scrollY)
+
+    // scrollY가 1085에서 div opacity가 1이 되도록
+    if(scrollY > 1085){
+        document.querySelector('.pos').style.opacity="1"
+    }
+})
+
+// =============================================
+// 폼이벤트
+/* 4. [submit] */
+const todoForm=document.querySelector('#todo-form') // form 태그
+const todos = document.querySelector('.todos') // ul 태그
+
+todoForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    // 폼이 제출되는것을 취소! 이벤트 전달을 막는 방법
+    // 새로고침 막음
+
+    console.log('submit')
+
+    // 폼 내부의 input창 선택
+    const todoInput = document.querySelector('input[name="todo"]')
+    console.dir(todoInput) // 요소가 가지고 있는 데이터를 출력
+    // console.log(todoInput.value)
+
+    // (!!!!) 공백으로 들어오는 문자는 추가되지 않도록
+    const todo = todoInput.value.trim()
+
+    console.log('todo:'+todo) // ""일 때 막아주기!
+    if(todo !==""){    
+        // 선택된 ul 태그의 자식으로 <li>todo</li> 붙이기
+        const li = document.createElement('li')
+        li.textContent = todo
+        todos.append(li)
+    }else{
+        alert("오늘의 할 일을 작성해주세요!🥺")
+    }
+        
+    todoInput.value=""
+})
+
+// =========================================
+/* 5. [change 이벤트] */
+const chgInput = document.querySelector('#change-input')
+chgInput.addEventListener('change',function(){
+    console.log('changed!!!')
+})
+
+chgInput.addEventListener('input',function(){
+    console.log('changing!!!')
+    // input 창의 value에 변경이 발생되면 일어나는 이벤트
+
+    let intro = document.querySelector('.intro')
+    intro.innerHTML = this.value
+})
