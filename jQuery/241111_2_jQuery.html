@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery method1</title>
+    <title>jQuery method2</title>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
     
-    <script defer src="./241111_1_jQuery.js"></script>
+    <script defer src="./241111_2_jQuery.js"></script>
+    
+    <style>
+        .color-blue{
+            color: blue;
+        }
+
+        .fs-50{
+            font-size: 50px;
+        }
+
+        .bg-pink{
+            background-color: pink;
+        }
+    </style>
+
 </head>
 <body>
     <h1>jQuery method</h1>
@@ -56,15 +71,12 @@
     <h4>append()</h4>
     <button onclick="appendJS()">js로 바꾸기</button>
     <button onclick="appendJQ()">jq로 바꾸기</button>
-
     <h4>prepend()</h4>
     <button onclick="prependJS()">js로 바꾸기</button>
     <button onclick="prependJQ()">jq로 바꾸기</button>
-
     <h4>after()</h4>
     <button onclick="afterJS()">js로 바꾸기</button>
     <button onclick="afterJQ()">jq로 바꾸기</button>
-    
     <h4>before()</h4>
     <button onclick="beforeJS()">js로 바꾸기</button>
     <button onclick="beforeJQ()">jq로 바꾸기</button>
@@ -79,9 +91,34 @@
     <h4>remove()</h4>
     <button onclick="removeJS()">js로 바꾸기</button>
     <button onclick="removeJQ()">jq로 바꾸기</button>
+
     <h4>empty()</h4>
-    
     <button onclick="emptyJS()">js로 바꾸기</button>
     <button onclick="emptyJQ()">jq로 바꾸기</button>
+
+    <hr />
+    <h3>요소 탐색하기</h3>
+    <!-- .ancestor>.parent>.child$*3 -->
+    <div class="ancestor">
+        <div class="parent">
+            <div class="child1">자식1</div>
+            <div class="child2">자식2</div>
+            <div class="child3">자식3</div>
+        </div>
+    </div>
+    <button onclick="findParent()">부모 찾기</button>
+    <button onclick="findParents()">조상 찾기</button>
+    <button onclick="findNext()">다음 형제 찾기</button>
+    <button onclick="findPrev()">이전 형제 찾기</button>
+    <button onclick="findChildren()">모든 자식 찾기</button>
+
+    <hr />
+    <h3>클래스 조작하기</h3>
+    <p id="hi" class="color-blue">안녕하세요!!</p>
+    <button onclick="addClass()">클래스 추가</button>
+    <button onclick="removeClass()">클래스 삭제</button>
+    <button onclick="hasClass()">클래스 유무확인</button>
+    <button onclick="toggleClass()">클래스 토글</button>
+
 </body>
 </html>

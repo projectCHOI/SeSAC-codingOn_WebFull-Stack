@@ -111,3 +111,35 @@ function emptyJS(){
 function emptyJQ(){
     $('ul.nums').empty()
 }
+
+// 요소 탐색하기
+function findParent(){
+    console.log($('.child2').parent())
+}
+function findParents(){
+    console.log($('.child2').parents())
+}
+function findNext(){
+    console.log($('.child2').next())
+}
+function findPrev(){
+    console.log($('.child2').prev())
+}
+function findChildren(){
+    console.log($('.parent').children())
+}
+
+// 클래스 조작하기
+function addClass(){
+    $('#hi').addClass('fs-50')
+}
+function removeClass(){
+    // $('#hi').removeClass('color-blue')
+    $('#hi').removeClass() // 클래스 모두 제거
+}
+function hasClass(){
+    console.log($('#hi').hasClass('fs-50'))
+}
+function toggleClass(){
+    $('#hi').toggleClass('bg-pink')
+}
