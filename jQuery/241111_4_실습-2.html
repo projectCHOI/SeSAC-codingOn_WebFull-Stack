@@ -1,0 +1,63 @@
+<!-- 사각형 색상 변경하기 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 실습2</title>
+    <!-- TODO1: jQuery CDN 불러오기 -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      div:hover {
+        cursor: pointer;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .purple {
+        background-color: purple;
+      }
+    </style>
+    <script>
+      // 색상 배열 설정
+      let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+      let colorIndex = 0;
+
+      function changeColor() {
+        // 현재 색상 제거
+        $('div').removeClass(colors[colorIndex]);
+
+        // 다음 색상 설정
+        colorIndex = (colorIndex + 1) % colors.length;
+        $('div').addClass(colors[colorIndex]);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="red" onclick="changeColor();"></div>
+  </body>
+</html>

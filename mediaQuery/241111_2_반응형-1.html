@@ -1,0 +1,37 @@
+<!-- 화면 크기에 따라 자리 바꾸기 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형-1</title>
+    <style>
+      body {
+        display: flex;
+      }
+      div {
+        background-color: black;
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      /* 브라우저 넓이가 700px 이하일 때 기준으로 */
+      @media screen and (max-width: 700px) {
+        body {
+          display: flex;
+          flex-direction: column;
+        }
+        div {
+          background-color: skyblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

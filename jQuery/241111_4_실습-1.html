@@ -1,0 +1,36 @@
+<!-- 과일 사진 변경하기 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 실습1</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+
+    <script>
+      function changeImg(name) {
+        // name 값에 따라 이미지 경로 설정
+        if (name === 'apple') {
+          $("img").attr("src", "./241111_4_실습-1_app.jpg");
+        } else if (name === 'banana') {
+          $("img").attr("src", "./241111_4_실습-1_ban.jpg");
+        } else if (name === 'grape') {
+          $("img").attr("src", "./241111_4_실습-1_gra.jpg");
+        } else if (name === 'peach') {
+          $("img").attr("src", "./241111_4_실습-1_pea.jpg");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 기본 이미지 설정 -->
+    <img src="./241111_4_실습-1_on.jpg" alt="과일" width="230px" height="200px" />
+    <br />
+    <!-- 버튼 클릭 시 각 과일 이미지로 변경 -->
+    <button onclick="changeImg('apple')">사과</button>
+    <button onclick="changeImg('banana')">바나나</button>
+    <button onclick="changeImg('grape')">포도</button>
+    <button onclick="changeImg('peach')">복숭아</button>
+  </body>
+</html>
