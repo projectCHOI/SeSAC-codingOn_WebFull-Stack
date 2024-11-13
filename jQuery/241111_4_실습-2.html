@@ -1,16 +1,14 @@
-<!-- 사각형 색상 변경하기 -->
-<!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery 실습2</title>
-    <!-- TODO1: jQuery CDN 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+    <!-- TODO1: jQuery CDN 불러오기 -->
     <style>
       div {
-        width: 100px;
-        height: 100px;
+        width: 100;
+        height: 100;
       }
 
       div:hover {
@@ -42,17 +40,24 @@
       }
     </style>
     <script>
-      // 색상 배열 설정
+      console.log('red')
       let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
-      let colorIndex = 0;
 
+      // TODO2: changeColor 함수 내부 작성
       function changeColor() {
-        // 현재 색상 제거
-        $('div').removeClass(colors[colorIndex]);
-
-        // 다음 색상 설정
-        colorIndex = (colorIndex + 1) % colors.length;
-        $('div').addClass(colors[colorIndex]);
+      if($('div').hasClass('red')){
+        $('div').switchClass('red','orange')
+      }else if($('div').hasClass('orange')){
+        $('div').switchClass('orange','yellow')
+      }else if($('div').hasClass('yellow')){
+        $('div').switchClass('yellow','green')
+      }else if($('div').hasClass('green')){
+        $('div').switchClass('green','blue')
+      }else  if($('div').hasClass('blue')){
+        $('div').switchClass('blue','purple')
+      }else if($('div').hasClass('purple')){
+        $('div').switchClass('purple','red')
+      }
       }
     </script>
   </head>

@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header 반응형 실습</title>
     <link rel="stylesheet" href="./241111_2_반응형-2.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+    <!-- 폰트코드 -->
+    <script src="https://kit.fontawesome.com/1a37f47d3b.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
         <div class="inner">
-            <span class="logo">로고</span>
+            <i class="fa-solid fa-house"></i>
             <ul class="menu">
                 <li>메뉴1</li>
                 <li>메뉴2</li>
                 <li>메뉴3</li>
                 <li>메뉴4</li>
             </ul>
-            <span class="menu-bar">메뉴바</span>
+            <i class="fa-solid fa-list"></i>
         </div>
 
         <ul class="small-menu">
@@ -26,6 +31,17 @@
             <li>메뉴3</li>
             <li>메뉴4</li>
         </ul>
+
+        <script>
+            const star = document.querySelector('.fa-list')
+            
+            star.addEventListener('click',(e)=>{
+                 e.preventDefault();
+
+                const smallMenu = document.querySelector('.small-menu')
+                smallMenu.classList.toggle('small-menu1');
+            })
+        </script>
     </header>
 </body>
 </html>
