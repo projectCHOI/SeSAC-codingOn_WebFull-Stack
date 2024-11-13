@@ -1,0 +1,10 @@
+.card-img-top {
+    height: 200px; /* 이미지 높이를 동일하게 설정 */
+    object-fit: cover; /* 이미지 왜곡 없이 카드에 맞춤 */
+  }
+  
+  .card-deck {
+    display: flex;
+    justify-content: center;
+  }
+  
