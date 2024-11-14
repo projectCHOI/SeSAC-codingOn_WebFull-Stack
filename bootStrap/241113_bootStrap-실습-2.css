@@ -1,10 +1,22 @@
 .card-img-top {
     height: 200px; /* 이미지 높이를 동일하게 설정 */
     object-fit: cover; /* 이미지 왜곡 없이 카드에 맞춤 */
-  }
-  
-  .card-deck {
+}
+
+.card-deck {
     display: flex;
     justify-content: center;
-  }
-  
+}
+
+body {
+    background-color: #f8f9fa; /* 기본적인 밝은 배경색 */
+    padding-bottom: 100px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #e9ecef;
+    padding: 10px 0;
+}
