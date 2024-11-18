@@ -1,0 +1,39 @@
+/* transform 여러개 사용해보기 */
+body {
+    align-items: center; /* 수직 가운데 정렬 */
+    background: rgb(210, 211, 212);
+}
+
+/* 이미지 스타일 */
+img {
+    position: relative; /* 요소의 위치를 부모 요소에 상대적으로 설정 */
+    width: 200px; /* 너비 */
+    height: 200px; /* 높이 */
+    top: 200px; /* 위 기준 위치 조정 */
+    transform: skewY(40deg); /* 이미지를 Y축으로 기울임 */
+
+    transition: 1s ease-in-out; /* 모든 변환에 1초 동안 부드러운 전환 효과 적용 */
+    cursor: pointer; /* 이미지 위에 마우스를 올리면 포인터 모양으로 변경 */
+}
+
+/* 요소 = 요소 = 요소 = 요소 */
+img:hover {
+    transform: skew(0, 0);
+    z-index: 10;
+    transition: 1s ease-out; /* 이미지 복원 1초 */
+    }
+
+.왼 {
+    left: 50px; /* 이미지 중앙 기준 오른쪽(+)으로 이동 */
+    z-index: 3; /* 이미지 순서 */
+    }
+
+.중 {
+    /* 중앙 기준 200px */
+    z-index: 2; /* 다른 이미지보다 뒤쪽에 위치하도록 설정 */
+    }
+
+.우 {
+    left: -50px; /* 이미지 중앙 기준 왼쪽(-)으로 이동 */
+    z-index: 1; 
+    }
