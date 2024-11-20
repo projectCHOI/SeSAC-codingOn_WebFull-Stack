@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form 전송</title>
+  </head>
+  <body>
+    <h2>GET 요청</h2>
+    <form action="/getForm" method="get">
+      <label> id: <input type="text" name="id" /> </label>
+      <br />
+      <label> email: <input type="email" name="email" /> </label>
+      <br />
+      <label> pw: <input type="password" name="pw" /> </label>
+
+      <button type="button">제출?</button>
+      <button type="submit">제출</button>
+    </form>
+
+    <h2>POST 요청</h2>
+    <form action="/postForm" method="post">
+      <label for="id">ID</label>
+      <input
+        type="text"
+        id="id"
+        name="id"
+        placeholder="ID 작성해주세요"
+        required
+        title="아이디는 필수값입니다."
+      />
+      <!-- required: 필수속성 -->
+      <br />
+      <label for="pw">PW</label>
+      <input
+        type="password"
+        id="pw"
+        name="pw"
+        placeholder="비밀번호 작성"
+        required
+      />
+      <br />
+      <label>
+        <input type="checkbox" name="agree" value="marketing" />
+        마케팅동의
+      </label>
+      <label>
+        <input type="checkbox" name="agree" value="private" />
+        개인정보 수집 동의
+      </label>
+      <label>
+        <input type="checkbox" name="agree" value="use" />
+        이용약관 동의
+      </label>
+
+      <br />
+      <input type="submit" value="제출" />
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
