@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습2</title>
+    <style>
+      .name {
+        color: orange;
+        font-weight: bold;
+      }
+
+      .list {
+        border: 1px solid gray;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px 1px black;
+        margin: 0px;
+        padding: 10px;
+      }
+
+      .color {
+        color: red;
+        font-weight: bold;
+      }
+
+      .number {
+        color: orange;
+        font-weight: bold;
+      }
+
+      .msg {
+        color: orange;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>실습2</h1>
+    <form action="/practice2/result" method="post"></form>
+    <p><span class="name"><%=name%></span>님 환영합니다</p>
+    <p class="list">성별: <%=sex%></p>
+    <p class="list">생년월일: <%=date_year%> <%=date_mon%> <%=date_day%></p>
+    <p class="list">관심사: <%=hb%></p>
+    <hr />
+    <h3>다른 태그 작성해보기</h3>
+    <p>좋아하는 색깔: <span class="color"><%=color%></span></p>
+    <p>좋아하는 숫자: <span class="number"><%=number%></span></p>
+    <p>다짐한마디: <span class="msg"><%=msg%></span></p>
+
+    <a href="/">홈으로 이동하기</a>
+  </body>
+</html>

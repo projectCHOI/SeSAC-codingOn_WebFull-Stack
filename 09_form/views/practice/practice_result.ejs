@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과</title>
+    <style>
+      span {
+        color: coral;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>폼 결과</h1>
+    <p>이름: <span><%= data.name %></span></p>
+    <p>성별: <span><%= data.gender %></span></p>
+    <p>
+      생년월일:
+      <span><%= data.year %>년 <%= data.month %>월 <%= data.day %>일</span>
+    </p>
+    <p>관심사: <span><%= data.interest %></span></p>
+    <p>
+      좋아하는 색상:
+      <span style="color: <%= data.color %>"><%= data.color %></span>
+    </p>
+    <p>좋아하는 숫자: <span><%= data.number %></span></p>
+    <a href="/">홈으로 이동</a>
+  </body>
+</html>
