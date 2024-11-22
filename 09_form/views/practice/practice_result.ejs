@@ -19,7 +19,13 @@
       생년월일:
       <span><%= data.year %>년 <%= data.month %>월 <%= data.day %>일</span>
     </p>
-    <p>관심사: <span><%= data.interest %></span></p>
+    <p>
+      관심사:
+      <span
+        ><%= Array.isArray(data.interest) ? data.interest.join(", ") :
+        data.interest %></span
+      >
+    </p>
     <p>
       좋아하는 색상:
       <span style="color: <%= data.color %>"><%= data.color %></span>
