@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습2</title>
+  </head>
+  <body>
+    <h1>실습문제2</h1>
+    <form action="/practice2-post" method="post">
+      <label>
+        이름
+        <input type="text" name="name" />
+      </label>
+
+      <fieldset>
+        <legend>성별</legend>
+        <label>
+          <input type="radio" name="gender" value="남자" />
+          <span>남자</span>
+        </label>
+        <label>
+          <input type="radio" name="gender" value="여자" />
+          <span>여자</span>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year">
+          <% for(let i=1980; i <=2010;i++){ %>
+          <option value="<%=i%>"><%=i%></option>
+          <% } %>
+        </select>
+        <span>년</span>
+        <select name="month">
+          <% for(let i=1; i <=12;i++){ %>
+          <option value="<%=i%>"><%=i%></option>
+          <% } %>
+        </select>
+        <span>월</span>
+        <select name="date">
+          <% for(let i=1; i <=31;i++){ %>
+          <option value="<%=i%>"><%=i%></option>
+          <% } %>
+        </select>
+        <span>일</span>
+      </fieldset>
+
+      <fieldset>
+        <legend>관심사</legend>
+        <label>
+          <input type="checkbox" name="favorite" value="여행" />
+          <span>여행</span>
+        </label>
+        <label>
+          <input type="checkbox" name="favorite" value="패션" />
+          <span>패션</span>
+        </label>
+        <label>
+          <input type="checkbox" name="favorite" value="음식" />
+          <span>음식</span>
+        </label>
+      </fieldset>
+
+      <hr />
+      <fieldset>
+        <legend>추가 속성들</legend>
+        <label>
+          좋아하는 색상
+          <input type="color" name="color" />
+        </label>
+
+        <br />
+        <label>
+          좋아하는 숫자
+          <input type="number" />
+        </label>
+        <br />
+        <label>
+          다짐 한마디
+          <textarea name="comment" cols="30" rows="10"></textarea>
+        </label>
+      </fieldset>
+      <input type="submit" value="제출" />
+    </form>
+  </body>
+</html>
