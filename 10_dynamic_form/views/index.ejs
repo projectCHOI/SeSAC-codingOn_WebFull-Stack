@@ -115,7 +115,7 @@
         });
       }
 
-      function axiosGet() {
+      async function axiosGet() {
         const form = document.forms["register"];
         const data = {
           name: form.name.value,
@@ -149,7 +149,8 @@
         }
 
         // ----- axios 요청 보내기 -----
-        axios({
+        // 1. then ~ catch 사용
+        /* axios({
           method: "get",
           url: "/axios",
           params: data, // get 요청일 때는 params에 담아서 요청
@@ -172,7 +173,23 @@
             // 통신에 실패했을 때
             console.error("error!!!!!!!!!");
             console.error(err);
+          }); */
+
+        // 2. async ~ await
+        // 에러처리를 try ~ catch 문을 사용해서 해주는게 좋다!
+        try {
+          const response = await axios({
+            method: "get",
+            url: `/axios?name=${data.name}&gender=${data.gender}`,
           });
+          console.log(response);
+          console.log(response.data);
+          const { name, gender } = response.data;
+          resultBox.textContent = `${name}의 성별은 ${gender}`;
+          resultBox.style.color = "green";
+        } catch (err) {
+          console.err(err);
+        }
       }
       function axiosPost() {}
     </script>
