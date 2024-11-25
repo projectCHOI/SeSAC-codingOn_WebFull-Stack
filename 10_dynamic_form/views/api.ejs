@@ -36,13 +36,15 @@
             img.width = 400;
           });
       }
+      // apikey: be32bc29
+      // http://www.omdbapi.com/?apikey=[yourkey]&
 
-      //   apikey: be32bc29
+      //   apikey: 2e2df2bd
       //   http://www.omdbapi.com/?apikey=[yourkey]&
-      const word = "love";
+      const word = "iron";
       axios({
         method: "get",
-        url: "http://www.omdbapi.com/?apikey=be32bc29&s=" + word,
+        url: "http://www.omdbapi.com/?apikey=2e2df2bd&s=" + word,
       }).then((res) => {
         console.log(res.data); // {Search, totalResults, Response}
         // 배열 {Poster, Title, Type, Year, imdbID}[]

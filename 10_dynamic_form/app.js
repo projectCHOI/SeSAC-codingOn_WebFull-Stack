@@ -10,6 +10,9 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+const realId = "banana";
+const realPw = "4321";
+
 /* API */
 app.get("/", (req, res) => {
   res.render("index");
@@ -67,6 +70,22 @@ app.get("/api", (req, res) => {
   res.render("api");
 });
 
+/* 실습문제 */
+// const realId = "banana";
+// const realPw = "4321";
+app.get("/practice1", (req, res) => {
+  res.render("practice/practice1.ejs");
+});
+app.get("/practice2", (req, res) => {
+  res.render("practice/practice2.ejs");
+});
+
+// /axios-practice1 GET
+app.get("/axios-practice1", (req, res) => {
+  console.log(req.query);
+  res.send(req.query);
+});
+// 포트 열기
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
