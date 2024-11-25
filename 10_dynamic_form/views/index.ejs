@@ -46,6 +46,9 @@
       <button type="button" onclick="fetchPost()">fetch POST 제출</button>
     </form>
     <div class="result"></div>
+
+    <hr />
+    <a href="/api">외부 api 사용</a>
     <script>
       const resultBox = document.querySelector(".result");
       function ajaxGet() {
@@ -218,6 +221,7 @@
         }
       }
 
+      // then.then.catch fetchGet
       function fetchGet() {
         const form = document.forms["register"];
         const data = {
@@ -250,6 +254,7 @@
           });
       }
 
+      // async await fetchPost
       async function fetchPost() {
         const form = document.forms["register"];
         const data = {
@@ -260,22 +265,22 @@
         try {
           const res = await fetch("/fetch", {
             method: "post",
-            body: JSON.stringify(data), //JSON 형식으로 보내야 함
+            //fetch의 body에는 JSON 형식으로 보내야 함
+            // object to JSON ==> JSON.stringify(오브젝트!!)
+            body: JSON.stringify(data),
             headers: {
               "Content-Type": "application/json",
             },
           });
-          console.log(res);
+          console.log(res); // Response 객체
 
           // json(), text() >> 시간이 걸리는 작업
+          // await 를 이용해 비동기 처리를 해줘야 함
           const result = await res.json();
-          console.log(result);
+          console.log(result); // 서버에서 보내주는 object 데이터
           //   result = { name: 'allie', gender: '여성' }
           const { name, gender } = result;
-          resultBox.textContent = `
-          POST /fetch 요청 결과:
-        ${name} 의 성별은 ${gender}
-          `;
+          resultBox.textContent = `POST /fetch 요청 결과: ${name} 의 성별은 ${gender}`;
           resultBox.style.color = "gray";
         } catch (err) {
           console.error(err);
