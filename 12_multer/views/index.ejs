@@ -10,6 +10,12 @@
         border: 2px solid #ccc;
         padding: 1rem;
       }
+
+      .profile {
+        background-color: pink;
+        border-radius: 50%;
+        box-shadow: 0 0 20px #0002;
+      }
     </style>
   </head>
   <body>
@@ -112,7 +118,54 @@
           img.src = `/${res.data.path}`;
         });
       }
-      function fileAndTextUpload() {}
+
+      // 2. 글과 파일을 함께 업로드
+      function fileAndTextUpload() {
+        const formData = new FormData();
+        // input[type="file"], 파일 정보를 서버로 보내기 위해 선택
+        const file = document.getElementById("dynamicFile");
+        // input[type="text"],
+        // 이미지에 대한 제목, 즉, 글자 정보를 서버로 보내기 위해 선택
+        const title = document.getElementById("dynamicTitle");
+        // img 태그
+        // 사진의 src, alt 속성을 바꾸기 위해서 선택
+        const img = document.querySelector("img");
+
+        console.log(file.files);
+
+        formData.append("dynamicFile", file.files[0]);
+        formData.append("dynamicTitle", title.value);
+
+        /* 
+        formData = {
+          dynamicFile: 파일정보(fileList[0])
+          dynamicTitle: "사진 제목 string"
+        }
+        */
+
+        axios({
+          method: "post",
+          url: "/dynamicUpload",
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+          .then((res) => {
+            console.log(res.data);
+            console.log(res.data.fileInfo.dynamicTitle); // "ss"
+            // "uploads\\26139_img1732671365965.png"
+            console.log(res.data.file.path);
+
+            img.src = "/" + res.data.file.path;
+            img.alt = res.data.fileInfo.dynamicTitle + " 사진";
+            // class ="tit"
+            img.classList.add("profile");
+            document.querySelector(".tit").innerText =
+              res.data.fileInfo.dynamicTitle;
+          })
+          .catch((err) => console.error("error!", err));
+      }
     </script>
   </body>
 </html>

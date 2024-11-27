@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // 3. static 폴더 설정
-app.use("/sta");
+app.use("/static", express.static(__dirname + "/public"));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // 4. multer 설정
 const upload = multer({
@@ -113,9 +114,26 @@ app.post(
 );
 
 // 동적폼 파일업로드
-app.post("/dynami", uploadDetail.single("dynami")(req));
+app.post("/dynamicUpload", uploadDetail.single("dynamicFile"), (req, res) => {
+  console.log(req.file);
+  console.log(req.body);
+  /* 
+  {
+  fieldname: 'dynamicFile',
+  originalname: 'animal-7024072_1280.png',
+  encoding: '7bit',
+  mimetype: 'image/png',
+  destination: 'uploads/',
+  filename: 'animal-7024072_12801732520696723.png',
+  path: 'uploads\\animal-7024072_12801732520696723.png',
+  size: 1730712
+}
+  */
+  // 하나의 객체에 합쳐서 보내는 방법
+  // res.send({ ...req.body, ...req.file });
+  res.send({ file: req.file, fileInfo: req.body });
+});
 
-// 아래
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });

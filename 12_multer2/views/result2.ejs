@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 결과</title>
+    <style>
+      .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #ddd;
+        box-shadow: 0 0 10px #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= name %>님 마이페이지</h1>
+    <img src="<%= profileImage %>" alt="Profile Image" class="profile-img" />
+    <p>아이디: <%= id %></p>
+    <p>비밀번호: <%= password %></p>
+    <p>이름: <%= name %></p>
+    <p>나이: <%= age %></p>
+  </body>
+</html>
