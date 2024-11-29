@@ -8,19 +8,14 @@
   <body>
     <h1>댓글 모음</h1>
     <a href="/">홈으로 이동</a>
-
-    <!-- { commentInfos: comments } -->
     <ul>
-      <% if (commentInfos && commentInfos.length > 0) { %> <% for (let i = 0; i
-      < commentInfos.length; i++) { %>
+      <% for (let i = 0; i < commentInfos.length; i++) { %>
       <li>
         <b><%= commentInfos[i].userid %></b>
         <a href="/comment/<%= commentInfos[i].id %>"
           ><%= commentInfos[i].comment %></a
         >
       </li>
-      <% } %> <% } else { %>
-      <li>댓글이 없습니다.</li>
       <% } %>
     </ul>
   </body>
