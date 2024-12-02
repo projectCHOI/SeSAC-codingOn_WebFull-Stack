@@ -9,24 +9,9 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// 실제 로그인 정보
-const realId = "banana";
-const realPw = "4321";
-
-// 실습문제
-app.get("/practice1", (req, res) => {
-  res.render("practice1");
-});
-
-// 로그인 요청 처리
-app.post("/practice2", (req, res) => {
-  const { userId, userPw } = req.body;
-  if (userId === realId && userPw === realPw) {
-    res.send({ isSuccess: true, userId });
-  } else {
-    res.send({ isSuccess: false });
-  }
-});
+// 라우터 연결
+const userRouter = require("./routes/user");
+app.use("/", userRouter);
 
 // 포트 열기
 app.listen(PORT, () => {

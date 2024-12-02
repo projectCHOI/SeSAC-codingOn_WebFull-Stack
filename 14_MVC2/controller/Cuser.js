@@ -1,17 +1,16 @@
 const User = require("../model/User");
 
 exports.main = (req, res) => {
-  res.render("index", { userInfos: User.userInfo() });
+  res.render("index");
 };
 
 exports.login = (req, res) => {
   console.log(req.body);
-  console.log(User.userInfo().realId);
+  const { realId, realPw } = User.userInfo();
 
-  if (
-    User.userInfo().realId === req.body.userId &&
-    User.userInfo().realPw === req.body.userPw
-  ) {
+  if (realId === req.body.userId && realPw === req.body.userPw) {
     res.send({ isSuccess: true, userId: req.body.userId });
-  } else res.send({ isSuccess: false });
+  } else {
+    res.send({ isSuccess: false });
+  }
 };

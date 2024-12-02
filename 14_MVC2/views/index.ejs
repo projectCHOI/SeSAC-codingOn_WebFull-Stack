@@ -24,6 +24,7 @@
     <div class="login-result"></div>
   </body>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     function clickLogin() {
       const form = document.forms["login"];
@@ -43,7 +44,7 @@
       }
 
       axios({
-        url: "/practice2",
+        url: "/login",
         method: "post",
         data: data,
       }).then((res) => {

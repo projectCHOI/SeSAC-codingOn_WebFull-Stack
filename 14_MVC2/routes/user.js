@@ -5,6 +5,7 @@ const controller = require("../controller/Cuser");
 // GET /
 router.get("/", controller.main);
 
+// POST /login
 router.post("/login", controller.login);
 
 module.exports = router;

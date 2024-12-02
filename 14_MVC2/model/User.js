@@ -1,6 +1,6 @@
 exports.userInfo = () => {
   return {
-    realId: "soojin",
-    realPw: "soojin1234",
+    realId: "apple",
+    realPw: "12345",
   };
 };
