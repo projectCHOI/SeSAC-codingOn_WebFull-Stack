@@ -21,8 +21,9 @@ function createVisitor() {
     method: "post",
     url: "/visitor",
     data: {
-      name: form.name.value,
+      id: id,
       comment: form.comment.value,
+      name: form.name.value,
     },
   })
     .then((res) => {

@@ -91,6 +91,7 @@ exports.deleteVisitor = (id, cb) => {
   });
 };
 
+// 데이터 "수정"
 exports.patchVisitor = (data, cb) => {
   console.log("model data", data);
   // {id, name, comment}
