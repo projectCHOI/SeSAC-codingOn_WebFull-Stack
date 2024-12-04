@@ -5,6 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>방명록 페이지</title>
+    <!-- axios CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+      integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="/static/visitor.js"></script>
   </head>
   <body>
     <h2>방명록 페이지</h2>
@@ -17,8 +25,8 @@
           name="comment"
           placeholder="간단 방명록 작성"
         /><br />
-        <div>
-          <button type="button">방명록 등록</button>
+        <div id="btn-group">
+          <button type="button" onclick="createVisitor()">방명록 등록</button>
         </div>
       </fieldset>
     </form>
@@ -41,13 +49,26 @@
       ]
       -->
       <tbody>
+        <!-- <tr>
+          <td>1</td>
+          <td>홍길동</td>
+          <td>내가 왔다</td>
+          <td><button>수정</button></td>
+          <td><button>삭제</button></td>
+        </tr> -->
         <% for(let i=0; i< data.length ; i++ ){ %>
-        <tr>
+        <tr id="tr_<%= data[i].id %>">
           <td><%= data[i].id %></td>
           <td><%= data[i].name %></td>
           <td><%= data[i].comment %></td>
-          <td><button>수정</button></td>
-          <td><button>삭제</button></td>
+          <td>
+            <button onclick="editVisitor('<%= data[i].id %>')">수정</button>
+          </td>
+          <td>
+            <button onclick="deleteVisitor(this,'<%= data[i].id %>')">
+              삭제
+            </button>
+          </td>
         </tr>
         <% } %>
       </tbody>
