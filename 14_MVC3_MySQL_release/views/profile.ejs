@@ -12,11 +12,29 @@
       <label for="userid">ID</label>
       <input type="hidden" id="id" value="" />
       <!-- readonly: userid는 수정 불가능 (조건임) -->
-      <input id="userid" type="text" name="userid" value="" readonly /><br />
+      <input
+        id="userid"
+        type="text"
+        name="userid"
+        value="<%= user.userid %>"
+        readonly
+      />
       <label for="password">Password</label>
-      <input id="password" type="password" name="pw" value="" required /><br />
+      <input
+        id="password"
+        type="password"
+        name="pw"
+        value="<%= user.pw %>"
+        required
+      />
       <label for="name">Name</label>
-      <input id="name" type="text" name="name" value="" required /><br />
+      <input
+        id="name"
+        type="text"
+        name="name"
+        value="<%= user.name %>"
+        required
+      />
       <button type="button" onclick="profileEdit();">Edit</button>
       <button type="button" onclick="profileDelete();">Delete</button>
     </form>
