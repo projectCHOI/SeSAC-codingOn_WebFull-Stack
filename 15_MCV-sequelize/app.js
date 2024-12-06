@@ -1,8 +1,8 @@
-// 15_MCV-sequelize\app.js
 const express = require("express");
 const db = require("./models");
 const app = express();
-const PORT = 8080;
+require("dotenv").config();
+const PORT = process.env.PORT;
 
 // 미들웨어처리
 app.set("view engine", "ejs");
@@ -22,10 +22,8 @@ app.get("*", (req, res) => {
 db.sequelize.sync({ force: false }).then((result) => {
   // console.log(result);
   console.log("DB연결 성공!");
-  console.log("-------");
-});
-
-// 포트열기
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+  // 포트열기
+  app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+  });
 });

@@ -1,5 +1,6 @@
 // const Visitor = require("../model/Visitor");
 const models = require("../models/index");
+const { errorlogs } = require("../utils/common");
 // console.log(Visitor.getVisitors());
 
 /* / GET */
@@ -118,8 +119,7 @@ exports.postVisitor = (req, res) => {
       res.send(result);
     })
     .catch((err) => {
-      console.log("err", err);
-      res.status(500).send("server err");
+      errorlogs(res, err);
     });
 };
 
@@ -149,20 +149,52 @@ exports.deleteVisitor = async (req, res) => {
       res.send("잘못된 접근입니다!!");
     }
   } catch (err) {
-    console.log("err", err);
-    res.send("internal server error!");
+    errorlogs(res, err);
   }
 };
 
 /* /visitor PATCH, 수정 */
-exports.patchVisitor = (req, res) => {
+// update  SET ~~~ >> update
+exports.patchVisitor = async (req, res) => {
   console.log(req.body);
-  Visitor.patchVisitor(req.body, () => {
-    res.send("수정 완료");
-  });
-  // res.send("response patch!");
-
   // [sequelize 전]
+  // Visitor.patchVisitor(req.body, () => {
+  //   res.send("수정 완료");
+  // });
 
   // [sequelize 후]
+  // `UPDATE visitor
+  //   SET name="${req.body.name}", comment="${req.body.comment}"
+  //   WHERE id=${req.body.id}`
+  try {
+    const [result] = await models.Visitor.update(
+      {
+        name: req.body.name,
+        comment: req.body.comment,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    );
+    console.log(result); // [1], [0]
+    // const [number] = result;
+    // console.log(number);
+
+    if (Boolean(result)) {
+      res.send("수정 완료");
+    } else {
+      res.send("잘못된 접근입니다.");
+    }
+  } catch (err) {
+    // errorlogs(
+    //   res,
+    //   err,
+    //   "patch controller 내부",
+    //   "수정 에러가 났어요",
+    //   500,
+    // );
+    errorlogs(res, err, "patch controller 내부");
+  }
 };

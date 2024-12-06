@@ -19,7 +19,15 @@ const Visitor = function (Sequelize, DataTypes) {
         type: DataTypes.TEXT("medium"),
       },
     }, // 컬럼 정의
-    {}
+    {
+      timestamps: false,
+      // 데이터 추가/수정 컬럼을 자동으로 만들어서 기록
+      // 기본값 true
+      freezeTableName: true,
+      // 기본값 false
+      // 첫번째 인자로 전달을 해준 모델 이름 그대로
+      // 테이블이름을 고정하겠다!
+    }
   );
 
   return model;
