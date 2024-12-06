@@ -1,31 +1,29 @@
-const Comment = require("../model/Comment");
+// 임시 데이터
+const Comment = {
+  commentInfos: () => [
+    { id: 1, name: "Alice", comment: "Hello, world!" },
+    { id: 2, name: "Bob", comment: "This is a comment." },
+    { id: 3, name: "Charlie", comment: "How are you?" },
+    { id: 4, name: "Dave", comment: "Nice to meet you!" },
+  ],
+};
 
-// GET /
 exports.main = (req, res) => {
   res.render("index");
 };
 
-// GET /comments
 exports.comments = (req, res) => {
-  console.log(Comment.commentInfos());
-  res.render("comments", { commentInfos: Comment.commentInfos() });
+  const comments = Comment.commentInfos();
+  console.log(comments);
+  res.render("comments", { comments });
 };
 
-// GET /comment/:id
 exports.comment = (req, res) => {
   const comments = Comment.commentInfos();
-  console.log(req.params);
-  //   console.log(req.query);
-  const commentId = req.params.id; //
-  console.log("commentId:", commentId); // 1,2,3,4
+  const commentId = req.params.id;
 
-  console.log(comments[commentId - 1]); // 댓글 실제 정보
-  if (commentId < 1 || commentId > comments.length) {
-    res.render("404");
-  }
-
-  if (isNaN(commentId)) {
-    res.render("404");
+  if (commentId < 1 || commentId > comments.length || isNaN(commentId)) {
+    return res.render("404");
   }
 
   res.render("comment", { commentInfo: comments[commentId - 1] });

@@ -21,4 +21,8 @@ const Visitor = function (Sequelize, DataTypes) {
     }, // 컬럼 정의
     {}
   );
+
+  return model;
 };
+
+module.exports = Visitor; // models/index.js 에서 사용할 예정
