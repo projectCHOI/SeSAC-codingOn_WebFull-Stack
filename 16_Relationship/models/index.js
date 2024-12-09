@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  config,
 );
 
 // (2) 모델을 불러오면서 인자로 정보 전달
