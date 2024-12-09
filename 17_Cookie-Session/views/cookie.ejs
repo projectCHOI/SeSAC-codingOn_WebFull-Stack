@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿠키 확인하기</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>cookie</title>
+  </head>
+  <body>
     <h1>쿠키 확인하기</h1>
-    <a href="/setCookie" style="margin-right: 10px;">쿠키 설정</a>
-    <a href="/getCookie" style="margin-right: 10px;">쿠키값 가져오기</a>
+    <a href="/setCookie">쿠키 설정</a>
+    <a href="/getCookie">쿠키값 가져오기</a>
     <a href="/clearCookie">쿠키 삭제</a>
-    <p id="cookie-info"></p>
     <script>
-        // 현재 쿠키를 콘솔에 출력
-        console.log('document.cookie:', document.cookie);
-
-        // 현재 쿠키를 화면에 출력
-        const cookieInfo = document.getElementById('cookie-info');
-        cookieInfo.textContent = `현재 쿠키: ${document.cookie || '없음'}`;
+      console.log("document.cookie", document.cookie);
+      // 프론트에서 쿠키 설정
+      //   document.cookie =
+      //     "user=sesac; expires=09 Dec 2024 /15:00:00 GMT; path=/";
     </script>
-</body>
+  </body>
 </html>
