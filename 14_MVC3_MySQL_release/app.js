@@ -16,8 +16,12 @@ app.use("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// 기본 경로 처리
+app.get("/", (req, res) => {
+  res.redirect("/user/signin");
+});
+
 // 라우팅 설정
-// 기본 경로: localhost:PORT/user
 app.use("/user", userRouter);
 
 // 404 에러 처리
@@ -27,5 +31,5 @@ app.use((req, res) => {
 
 // 서버 실행
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}/user`);
+  console.log(`http://localhost:${PORT}`);
 });
