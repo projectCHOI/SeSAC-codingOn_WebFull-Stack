@@ -2,7 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const app = express();
 const PORT = 8080;
-const SECRET = "choichoi"; // 이거 나중에 .env에 저장해야함.(왜?)
+const SECRET = "rMaRSWeDfz2NDB7H"; // .env 에 저장해서 사용
 
 app.set("view engine", "ejs");
 
@@ -11,9 +11,9 @@ app.use(express.json());
 
 //DB 정보
 const userInfo = {
-  id: "choi",
+  id: "cocoa",
   pw: "1234",
-  name: "Missing",
+  name: "코코아",
   age: 18,
 };
 
@@ -51,6 +51,38 @@ app.post("/login", (req, res) => {
     res.status(500).send({ message: "서버 에러" });
   }
 });
+
+app.post("/token", (req, res) => {
+  try {
+    console.log(req.headers.authorization); // Bearer sdfs.sdfs.ddfd
+    if (req.headers.authorization) {
+      const token = req.headers.authorization.split(" ")[1];
+      console.log(token);
+      try {
+        // 토큰 검증 작업
+        const auth = jwt.verify(token, SECRET);
+        console.log(auth);
+        // { id: 'cocoa', iat: 1733894229 }
+        if (auth.id === userInfo.id) {
+          res.send({ result: true, name: userInfo.name });
+        }
+      } catch (err) {
+        console.log("토큰 인증 에러");
+        res.status(401).send({
+          result: false,
+          message: "인증된 회원이 아닙니다.",
+        });
+      }
+    } else {
+      // 인증 정보 없을 때
+      res.redirect("/login");
+    }
+  } catch (err) {
+    console.log("post /login err", err);
+    res.status(500).send({ message: "서버 에러" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
