@@ -5,7 +5,8 @@ export default function SyntheticEvent() {
   }
 
   function printInput(e) {
-    console.log(e);
+    console.log(e.target);
+    console.log(e.target.value);
   }
 
   function callTest() {
@@ -14,7 +15,7 @@ export default function SyntheticEvent() {
   return (
     <div>
       <button onClick={syntheticEvent}>콘솔을 보세요</button>
-      <button onClick={callTest()}>함수 호출해서 전달</button>
+      {/* <button onClick={callTest()}>함수 호출해서 전달</button> */}
       <br />
       <input
         type="text"

@@ -1,49 +1,61 @@
-import { useState } from "react";
+export function FunctionProps(props) {
+  console.log(props);
+  console.log(typeof props); // object
 
-export default function FunctionState() {
-  // 기존 js 사용해서 화면 바꾸는 방식
-  /*  
-    let apple = "사과";
-  const inEng = () => {
-    // apple = "apple";
-    const content = document.querySelector(".state");
-    // console.log(apple);
-    content.innerHTML = "apple";
-  }; */
-  // 2. stete를 사용해서 화면을 변경
-  /* const [apple, setApple] = useState("사과");
-
-  const inEng2 = () => {
-    setApple("apple");
-  };
   return (
     <div>
-      <div className="state">{apple}</div>
-      <button onClick={inEng2}>영어로 변경!!</button>
-    </div>
-  ); */
-  // 3. vanilla JS 사과 > apple > 사과 > apple
-  /*   const changeLang = () => {
-    const content = document.querySelector(".state");
-    content.innerText === "사과"
-      ? (content.innerText = "apple")
-      : (content.innerText = "사과");
-  };
-  return (
-    <div>
-      <div className="state">사과</div>
-      <button onClick={changeLang}>언어 변경?</button>
-    </div>
-  ); */
-  const [showEnglish, setShowEnglish] = useState(true);
-  const changeLang2 = () => {
-    // true 라면 false로, false라면 true로 변경
-    setShowEnglish(!showEnglish);
-  };
-  return (
-    <div>
-      <div className="state">{showEnglish ? "apple" : "사과"}</div>
-      <button onClick={changeLang2}>언어 변경?</button>
+      <h5>{props.name}</h5>
+      <p>
+        {props.number} 개에 {props.krPrice}원
+      </p>
+      <hr />
     </div>
   );
 }
+
+export function FunctionProps2(props) {
+  const { name, number, krPrice } = props;
+  return (
+    <div>
+      <h5>{name}</h5>
+      <p>
+        {number} 개에 {krPrice}원
+      </p>
+      <hr />
+    </div>
+  );
+}
+export function FunctionProps3({ name, number, krPrice }) {
+  return (
+    <div>
+      <h5>{name}</h5>
+      <p>
+        {number} 개에 {krPrice}원
+      </p>
+      <hr />
+    </div>
+  );
+}
+
+export function FunctionProps4({
+  name,
+  number = 5,
+  krPrice = 2000, // 기본값 설정 가능
+  children,
+}) {
+  return (
+    <div>
+      <h5>{name}</h5>
+      <p>
+        {number} 개에 {krPrice}원
+      </p>
+      <p>children 요소: {children}</p>
+      <hr />
+    </div>
+  );
+}
+
+// FunctionProps4.defaultProps = {
+//   krPrice: 15000,
+//   number: 10,
+// };
