@@ -13,7 +13,13 @@ import Counter from "./components/Counter";
 import EntirePractice from "./components/ex2/EntirePractice";
 import PropsMap from "./components/map, filter/PropsMap";
 import PropsMap2 from "./components/map, filter/PropsMap2";
-
+// ex
+import HandlerEx1 from "./components/ex/HandlerEx1";
+import HandlerEx2 from "./components/ex/HandlerEx2";
+import HandlerEx3 from "./components/ex/HandlerEx3";
+import HandlerEx4 from "./components/ex/HandlerEx4";
+import PororoObj from "./components/ex/PororoObj";
+// ex2
 function App() {
   const arr = [
     { name: "peach", krPrice: 10000, number: 5 },
@@ -63,8 +69,17 @@ function App() {
       <PropsMap arr={arr} />
       <PropsMap2 arr={arr} />
       <PropsMap2 />
-
+      <hr />
       <h3>ex 1번</h3>
+      <HandlerEx1 />
+      <h3>ex 2번</h3>
+      <HandlerEx2 />
+      <h3>ex 3번</h3>
+      <HandlerEx3 />
+      <h3>ex 4번</h3>
+      <HandlerEx4 />
+      <h3>ex 5번</h3>
+      <PororoObj />
     </div>
   );
 }

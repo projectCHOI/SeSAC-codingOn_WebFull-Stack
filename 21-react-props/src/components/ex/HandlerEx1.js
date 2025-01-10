@@ -13,6 +13,7 @@ export default function HandlerEx() {
     <div>
       <h1>{message}</h1>
       <button onClick={handleClick}>클릭</button>
+      <hr />
     </div>
   );
 }

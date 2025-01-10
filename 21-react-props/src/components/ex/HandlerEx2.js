@@ -22,6 +22,7 @@ export default function HandlerEx2() {
       <h1 style={{ color: color }}>{text}</h1>
       <button onClick={handleRedClick}>빨간색</button>
       <button onClick={handleBlueClick}>파란색</button>
+      <hr />
     </div>
   );
 }

@@ -15,6 +15,7 @@ export default function HandlerEx3() {
         {isVisible ? "사라져라" : "보여라"}
       </button>
       {isVisible && <h1>안녕하세요</h1>}
+      <hr />
     </div>
   );
 }

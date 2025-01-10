@@ -21,6 +21,7 @@ export default function HandlerEx4() {
       </h1>
       <button onClick={increase}>1 증가</button>
       <button onClick={decrease}>1 감소</button>
+      <hr />
     </div>
   );
 }

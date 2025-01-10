@@ -15,6 +15,7 @@ export default function ChangeObj({ objArr }) {
       <p>나이: {objArr[index].age}</p>
       <p>별명: {objArr[index].nickName}</p>
       <button onClick={changeMember}>멤버 바꾸기</button>
+      <hr />
     </div>
   );
 }
