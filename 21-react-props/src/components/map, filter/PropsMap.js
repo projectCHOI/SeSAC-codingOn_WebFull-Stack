@@ -1,4 +1,4 @@
-import { FunctionProps2 } from "./FunctionProps";
+import { FunctionProps2 } from "../FunctionProps";
 
 export default function PropsMap({ arr }) {
   //   console.log(arr);

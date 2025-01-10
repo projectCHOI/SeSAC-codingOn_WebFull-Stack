@@ -10,9 +10,9 @@ import FunctionState from "./components/FunctionState";
 import PracticeState from "./components/practice/PracticeState";
 import SyntheticEvent from "./components/SyntheticEvent";
 import Counter from "./components/Counter";
-import EntirePractice from "./components/practice/EntirePractice";
-import PropsMap from "./components/PropsMap";
-import PropsMap2 from "./components/PropsMap2";
+import EntirePractice from "./components/ex2/EntirePractice";
+import PropsMap from "./components/map, filter/PropsMap";
+import PropsMap2 from "./components/map, filter/PropsMap2";
 
 function App() {
   const arr = [
@@ -24,6 +24,7 @@ function App() {
   return (
     <div>
       {/* <h2>Props 사용</h2> */}
+
       {/* <h3>클래스형 컴포넌트 props 사용해보기</h3>
       <ClassProps name="루피" color="pink" nickname="공주" />
 
@@ -58,9 +59,12 @@ function App() {
 
       <h2>실습문제!!</h2>
       <EntirePractice /> */}
+
       <PropsMap arr={arr} />
       <PropsMap2 arr={arr} />
       <PropsMap2 />
+
+      <h3>ex 1번</h3>
     </div>
   );
 }
