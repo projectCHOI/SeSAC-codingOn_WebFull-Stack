@@ -19,7 +19,10 @@ import HandlerEx2 from "./components/ex/HandlerEx2";
 import HandlerEx3 from "./components/ex/HandlerEx3";
 import HandlerEx4 from "./components/ex/HandlerEx4";
 import PororoObj from "./components/ex/PororoObj";
-// ex2
+// ex3
+import MapExample from "./components/ex3/map";
+import MapExample2 from "./components/ex3/map2";
+
 function App() {
   const arr = [
     { name: "peach", krPrice: 10000, number: 5 },
@@ -30,7 +33,6 @@ function App() {
   return (
     <div>
       {/* <h2>Props 사용</h2> */}
-
       {/* <h3>클래스형 컴포넌트 props 사용해보기</h3>
       <ClassProps name="루피" color="pink" nickname="공주" />
 
@@ -51,21 +53,18 @@ function App() {
       <FunctionProps4 name="딸기">
         <span style={{ color: "red" }}>children 요소입니다!!!!</span>
       </FunctionProps4> */}
-
       {/* <h2>State</h2>
       <h3>클래스형 state</h3>
       <ClassState />
       <h3>함수형 state</h3>
       <FunctionState />
       <PracticeState /> */}
-
       {/* <h2>event</h2>
       <SyntheticEvent />
       <Counter />
 
       <h2>실습문제!!</h2>
       <EntirePractice /> */}
-
       <PropsMap arr={arr} />
       <PropsMap2 arr={arr} />
       <PropsMap2 />
@@ -80,6 +79,12 @@ function App() {
       <HandlerEx4 />
       <h3>ex 5번</h3>
       <PororoObj />
+      <hr />
+      <h3>사용자 등록 및 목록 관리</h3>
+      <MapExample /> {}
+      <hr />
+      <h3>사용자 등록 및 목록 관리2</h3>
+      <MapExample2 /> {}
     </div>
   );
 }
