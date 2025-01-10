@@ -10,8 +10,17 @@ import FunctionState from "./components/FunctionState";
 import PracticeState from "./components/practice/PracticeState";
 import SyntheticEvent from "./components/SyntheticEvent";
 import Counter from "./components/Counter";
+import EntirePractice from "./components/practice/EntirePractice";
+import PropsMap from "./components/PropsMap";
+import PropsMap2 from "./components/PropsMap2";
 
 function App() {
+  const arr = [
+    { name: "peach", krPrice: 10000, number: 5 },
+    { name: "strawberry", krPrice: 15000, number: 1 },
+    { name: "pear", krPrice: 5000, number: 3 },
+    { name: "apple", krPrice: 20000, number: 15 },
+  ];
   return (
     <div>
       {/* <h2>Props 사용</h2> */}
@@ -43,9 +52,15 @@ function App() {
       <FunctionState />
       <PracticeState /> */}
 
-      <h2>event</h2>
+      {/* <h2>event</h2>
       <SyntheticEvent />
       <Counter />
+
+      <h2>실습문제!!</h2>
+      <EntirePractice /> */}
+      <PropsMap arr={arr} />
+      <PropsMap2 arr={arr} />
+      <PropsMap2 />
     </div>
   );
 }
