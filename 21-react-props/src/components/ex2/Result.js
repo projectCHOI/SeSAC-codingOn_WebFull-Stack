@@ -1,6 +1,5 @@
 export default function Result(props) {
   const { content, fruit, color, background } = props.data;
-  //   console.log("data", data);
   return (
     <div>
       <img src={`/${fruit}.jpg`} width={100} height={100} />

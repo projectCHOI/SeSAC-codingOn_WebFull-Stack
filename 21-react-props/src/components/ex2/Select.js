@@ -1,12 +1,12 @@
 export default function Select({ setData }) {
   /* 
-      {
-      fruit: "apple",
-      background: "white",
-      color: "black",
-      content: "text",
-    }
-      */
+    {
+    fruit: "apple",
+    background: "white",
+    color: "black",
+    content: "text",
+  }
+    */
   return (
     <div>
       {/* select 3개 */}

@@ -1,4 +1,4 @@
-import { FunctionProps2 } from "../FunctionProps";
+import { FunctionProps2 } from "./FunctionProps";
 
 export default function PropsMap({ arr }) {
   //   console.log(arr);
@@ -8,7 +8,7 @@ export default function PropsMap({ arr }) {
   //   });
   //   const testArr2 = [
   //     <div>안녕하세요,,</div>,
-  //     <div>제 이름은 윤석입니다.</div>,
+  //     <div>제이름은 윤석입니다.</div>,
   //   ];
   return (
     <div>

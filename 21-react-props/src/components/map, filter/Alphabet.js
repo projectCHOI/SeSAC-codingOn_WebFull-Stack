@@ -22,6 +22,8 @@ export default function Alphabet() {
 
   const activeEnter = (e) => {
     // console.log(e.key); // 키보드의 정보
+    console.log(e.currentTarget);
+    console.log(e);
     if (e.key == "Enter") {
       addAlpha();
     }
@@ -47,7 +49,10 @@ export default function Alphabet() {
         onChange={(e) => {
           setInput(e.target.value);
         }}
-        onKeyDown={activeEnter}
+        // onKeyDown={activeEnter}
+        onKeyDown={(e) => {
+          console.log(e);
+        }}
       />
       <button onClick={addAlpha}>추가</button>
       <ol>
