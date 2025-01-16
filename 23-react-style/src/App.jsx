@@ -1,7 +1,18 @@
+import BasicCSS from "./components/BasicCSS";
+import ModuleCSS from "./components/ModuleCSS";
+import Practice from "./components/practice/Practice1";
+import Sass from "./components/Sass";
+import StyledComponents from "./components/StyledComponents";
+import "./style/basic_css.css";
 function App() {
   return (
     <div>
-      <h1>react-style</h1>
+      {/*
+     <BasicCSS />
+      <ModuleCSS />
+      <StyledComponents /> 
+       <Practice /> */}
+      <Sass />
     </div>
   );
 }
