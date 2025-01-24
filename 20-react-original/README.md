@@ -38,3 +38,24 @@ cd [작업할 폴더 경로]
 예시
 cd C:\Users\Administrator\Desktop\SeSAC-codingOn_WebFull Stack\20-react-original
 '''
+## 필요에 따라 실행
+
+#### 4) 의존성 설치
+
+의존성을 설치하여 React 프로젝트를 실행 가능하게 만든다.
+
+npm install
+
+#### 5) 캐시 데이터 관리
+
+npm의 캐시 데이터를 초기화하여 오류 방지
+
+npm cache clean --force
+
+#### 6) React 애플리케이션 실행
+
+React 개발 서버를 실행하여 애플리케이션을 브라우저에서 확인
+
+npm start
+
+이 명령은 로컬 개발 서버를 시작하며, 기본적으로 브라우저에서 http://localhost:3000으로 접근 가능
