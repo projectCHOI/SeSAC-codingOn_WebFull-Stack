@@ -19,7 +19,7 @@ npm install create-react-app -g
 '''
 전역으로 create-react-app 패키지를 설치하여, React 애플리케이션을 생성하는 도구를 준비.
 
-> 최신 개발 환경에서는 create-react-app의 전역 설치가 권장되지 않는 경우가 많아 npx 사용을 더 선호합니다.
+> 최신 개발 환경에서는 create-react-app의 전역 설치가 권장되지 않는 경우가 많아 npx 사용을 더 선호
 
 - React 애플리케이션 생성
 '''
@@ -59,3 +59,16 @@ React 개발 서버를 실행하여 애플리케이션을 브라우저에서 확
 npm start
 
 이 명령은 로컬 개발 서버를 시작하며, 기본적으로 브라우저에서 http://localhost:3000으로 접근 가능
+
+## 3. React 애플리케이션 생성 및 실행의 주요 특징
+
+#### 1. 자동화된 프로젝트 초기화
+create-react-app은 초기 설정과 디렉터리 구조를 자동으로 생성하여 개발 시간 절약
+
+
+#### 2. 개발 서버 제공
+npm start는 Hot Reloading 기능을 제공하여 코드 변경 시 즉각적인 UI 업데이트가 가능
+
+
+#### 3. 유지보수성 향상
+Node.js와 npm의 패키지 관리 기능을 통해 의존성 버전 관리
