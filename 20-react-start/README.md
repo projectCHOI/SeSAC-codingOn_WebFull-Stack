@@ -70,3 +70,32 @@ React 컴포넌트는 사용자 인터페이스의 기본 구성 요소
 #### React Hook:
 - React Hook은 함수형 컴포넌트에서도 state와 기타 React 기능을 사용할 수 있게 한다. 
 - 대표적인 Hook [useState, useEffect, useContext]
+
+### 3. JSX (JavaScript XML)
+- JSX는 React에서 UI를 정의하는 데 사용하는 JavaScript 확장 문법
+- HTML과 유사한 구문을 사용하며, JavaScript 코드를 포함
+
+#### JSX의 장점:
+1. **직관적인 코드 작성**:
+   - JSX를 사용하면 UI 구조를 명확하고 직관적으로 표현
+
+2. **동적 데이터 바인딩**:
+   - JSX 내부에서 중괄호 `{}`를 사용하여 JavaScript 표현식을 삽입
+
+3. **컴파일 및 변환**:
+   - Babel과 같은 도구를 사용하여 JSX를 일반 JavaScript 코드로 변환
+[***************************************************************]
+#### JSX 예시 코드:
+```jsx
+function App() {
+  const name = "React";
+  const isLearning = true;
+
+  return (
+    <div>
+      <h1>Welcome to {name}!</h1>
+      {isLearning ? <p>Learning React is fun!</p> : <p>Start learning React today!</p>}
+    </div>
+  );
+}
+```
