@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# React
+React는 직관적이고 효율적으로 사용자 인터페이스를 구축할 수 있는 프로그래밍 도구이다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. React란?
 
-## Available Scripts
+React는 JavaScript를 기반으로 한 UI 공구원 (Facebook에서 개발)
 
-In the project directory, you can run:
+다양한 플랫폼과 애플리케이션에서 활용되는 특징적인 구조를 제공
 
-### `npm start`
+React는 특히 사용자의 인터페이스를 설계하고 구현하는 데 있어 효율성과 유연성을 제공
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## React의 주요 특징
 
-### `npm test`
+### 1. 단방향 데이터 흐름
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+데이터는 부모 컴포넌트에서 자식 컴포넌트로만 전달
 
-### `npm run build`
+데이터의 변화를 추적하고 관리하기 용이
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+이는 데이터 흐름을 예측 가능하고 유지보수하기 쉽다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. 컴포넌트 기반 구조
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React의 UI 구조는 독립적이고 재사용 가능한 컴포넌트들로 구성
 
-### `npm run eject`
+컴포넌트들은 각자의 역할을 수행하면서 UI를 효율적으로 관리, 설계할 수 있다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. 가상 DOM (Virtual DOM)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React는 실제 DOM 대신 가상 DOM을 사용
 
-## Learn More
+성능 향상과 복잡한 UI에서도 효율적으로 작동할 수 있다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### 4. Props와 State
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Props: 부모 컴포넌트가 자식 컴포넌트로 데이터를 전달하는 데 사용
 
-### Analyzing the Bundle Size
+Props는 읽기 전용이며, 데이터 흐름의 일관성을 유지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+State: 컴포넌트 내부에서 선언되며, 컴포넌트의 동적인 데이터를 관리
 
-### Making a Progressive Web App
+State는 컴포넌트의 상태 변화를 감지하고, 이를 기반으로 UI를 업데이트
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 5. JSX (JavaScript XML)
 
-### Deployment
+JSX는 JavaScript와 XML의 조합, UI 요소를 정의하는 데 사용
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+JSX는 React.createElement() 호출로 변환되며, 개발자가 직관적으로 UI를 설계할 수 있도록 한다.
