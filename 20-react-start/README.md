@@ -53,3 +53,20 @@ State는 컴포넌트의 상태 변화를 감지하고, 이를 기반으로 UI�
 JSX는 JavaScript와 XML의 조합, UI 요소를 정의하는 데 사용
 
 JSX는 React.createElement() 호출로 변환되며, 개발자가 직관적으로 UI를 설계할 수 있도록 한다.
+
+### 2. React 컴포넌트
+React 컴포넌트는 사용자 인터페이스의 기본 구성 요소
+컴포넌트를 통해 UI를 설계하고 재사용 가능한 코드 구조를 만들 수 있다.
+
+#### 컴포넌트의 종류:
+1. **클래스형 컴포넌트 (Class Component)**:
+   - 기존의 React에서 사용되던 방식으로, ES6 클래스 문법을 사용하여 컴포넌트를 정의
+   - render() 메서드를 반드시 포함해야 하며, 라이프사이클 메서드와 state를 사용할 수 있다.
+
+2. **함수형 컴포넌트 (Functional Component)**:
+   - 최근 React에서 권장되는 방식으로, 함수 문법을 사용하여 컴포넌트를 정의
+   - 간결하고 직관적이며, React Hook을 통해 state와 라이프사이클 메서드를 사용할 수 있다.
+
+#### React Hook:
+- React Hook은 함수형 컴포넌트에서도 state와 기타 React 기능을 사용할 수 있게 한다. 
+- 대표적인 Hook [useState, useEffect, useContext]
